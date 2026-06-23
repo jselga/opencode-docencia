@@ -391,8 +391,53 @@ https://opencode.ai/docs/getting-started
 GitHub:
 
 https://github.com/anomalyco/opencode
+---
+
+## Bloc opcional. Correcció assistida amb IA (20-30 min)
+
+Aquest bloc tanca el cicle docent complet: teoria → exercicis → examen → correcció. Es pot fer si el temps ho permet o deixar com a mostra prèvia de la Sessió 2.
+
+### Pas 1 — Generar una rúbrica d'avaluació
+
+```text
+Llegeix @RAs.md, @tema.md, @teoria.md, @exercicis.md i @examen.md.
+
+Genera una rúbrica d'avaluació per a l'examen.
+Ha d'estar alineada amb els RA i repartir 10 punts.
+Presenta-la en format markdown.
+```
+
+### Pas 2 — Generar una solució base
+
+```text
+Genera una solució base per a l'examen.
+No optimitzis en excés: ha de semblar una solució clara per a alumnat de CFGS.
+```
+
+### Pas 3 — Simular una entrega d'alumne
+
+```text
+Simula una entrega d'un alumne amb errors habituals:
+- algun error de condició,
+- algun problema de format de sortida,
+- alguna variable poc clara,
+- però que compile parcialment.
+```
+
+### Pas 4 — Generar feedback formatiu
+
+```text
+Avalua aquesta entrega segons la rúbrica.
+Dona feedback formatiu, indicant punts forts, errors i recomanacions concretes.
+No siguis només sancionador: el feedback ha d'ajudar l'alumne a millorar.
+```
+
+### Missatge didàctic
+
+OpenCode no només genera materials: pot ajudar a construir un procés complet d'ensenyament, pràctica, avaluació i feedback.
 
 ---
+
 
 
 
