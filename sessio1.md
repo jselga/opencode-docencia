@@ -198,9 +198,8 @@ Això ajuda OpenCode a entendre millor l'estructura i el context del projecte.
 ---
 
 ## Bloc 5. Generar material de teoria (20 min)
-Mode: Plan
-Prompt inicial:
 
+### Pas 1 — Plan (prompt inicial)
 ```text
 Llegeix @RAs.md i @tema.md.
 
@@ -217,10 +216,17 @@ Presenta el resultat en format markdown.
 No generis exercicis encara.
 ```
 
-Després es pot demanar:
-Mode: Build
+### Pas 2 — Plan (refinament)
+L'agent respon amb un pla de contingut. El docent el revisa i demana ajustos:
+
 ```text
-Vull que possis fragments de codi breus però que exemplifiquin la teoria.    
+Vull que possis fragments de codi breus però que exemplifiquin la teoria.
+```
+
+L'agent actualitza el pla. El docent torna a revisar i, si és correcte, passa a Build.
+
+### Pas 3 — Build
+```text
 Guarda el resultat a teoria.md
 ```
 
@@ -232,10 +238,9 @@ El RA dona el marc curricular, però `tema.md` aporta el context concret que per
 
 ## Bloc 6. Generar exercicis a partir de la teoria (20 min)
 
-Nova petició:
-
+### Pas 1 — Plan (prompt inicial)
 ```text
-Llegeix @ra.md, @tema.md i @teoria.md.
+Llegeix @RAs.md, @tema.md i @teoria.md.
 
 Genera 10 exercicis progressius sobre estructures de selecció en Java per alumnat de CFGS DAM/DAW.
 
@@ -249,8 +254,16 @@ No incloguis la solució.
 Presenta el resultat en format markdown.
 ```
 
-Després es pot demanar:
+### Pas 2 — Plan (refinament)
+L'agent proposa una planificació dels exercicis. El docent pot demanar canvis:
 
+```text
+Refinaria el 10 perque no inclogui guard-clauses
+```
+
+L'agent ajusta el pla. El docent valida i passa a Build.
+
+### Pas 3 — Build
 ```text
 Guarda el resultat a exercicis.md
 ```
