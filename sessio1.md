@@ -12,7 +12,7 @@ Al final de la sessió els participants seran capaços de:
 * Connectar un proveïdor de models.
 * Obrir un projecte local i inicialitzar-lo.
 * Fer servir fitxers com a context real de treball.
-* Generar exercicis i activitats a partir de RAs.
+* Generar materials de teoria, exercicis i exàmens a partir de RAs i context específic.
 * Refinar el resultat afegint més context.
 * Entendre la diferència entre un xat generalista i un entorn orientat a projectes.
 
@@ -36,8 +36,9 @@ Exemple de projecte:
 ```text
 projecte-docent/
 ├── ra1.md
+├── tema.md
+├── teoria.md
 ├── exercicis.md
-├── criteris_avaluacio.md
 └── examen_anterior.md
 ```
 
@@ -84,27 +85,27 @@ https://opencode.ai/docs
 
 ## Bloc 3. Connectar un model (15 min)
 
-### Opció recomanada per al taller: OpenRouter
+Per a la sessió base convé treballar amb un proveïdor que ja estigui disponible o que el docent pugui mostrar en directe sense convertir el registre en una barrera d'entrada.
 
-1. Crear compte a:
+Flux recomanat:
 
-https://openrouter.ai
-
-2. Generar una API key.
-
-3. Iniciar OpenCode:
+1. Iniciar OpenCode:
 
 ```bash
 opencode
 ```
 
-4. Connectar el proveïdor des de la TUI:
+2. Connectar el proveïdor des de la TUI:
 
 ```text
 /connect
 ```
 
-5. Seleccionar `OpenRouter` i enganxar la clau.
+3. Seleccionar un proveïdor disponible i completar l'autenticació.
+
+Nota didàctica:
+
+Si no es vol dependre de registres previs o de configuracions personals, aquesta part es pot fer com a demostració guiada del docent.
 
 ### Comandes útils
 
@@ -147,6 +148,31 @@ Exemple de contingut:
 RA1. Desenvolupa aplicacions utilitzant estructures de control i aplicant criteris de llegibilitat i correcció.
 ```
 
+Crear un segon fitxer amb context específic:
+
+```bash
+nano tema.md
+```
+
+Exemple de contingut:
+
+```text
+Tema: Estructures de selecció en Java
+
+Continguts:
+- if
+- if else
+- else if
+- switch
+- operadors relacionals
+- operadors lògics
+- bones pràctiques en condicions
+- errors habituals
+
+Nivell: CFGS DAM/DAW
+Durada aproximada: 2 hores
+```
+
 Iniciar OpenCode en aquesta carpeta:
 
 ```bash
@@ -164,24 +190,60 @@ Això ajuda OpenCode a entendre millor l'estructura i el context del projecte.
 ### Com moure's dins OpenCode
 
 * `@ra.md` per referenciar un fitxer.
+* `@tema.md` per aportar context específic.
 * `/models` per canviar de model.
 * `/undo` per desfer l'últim canvi.
 * `/sessions` per veure sessions.
 
 ---
 
-## Bloc 5. Primera generació útil (20 min)
+## Bloc 5. Generar material de teoria (20 min)
 
 Prompt inicial:
 
 ```text
-Llegeix @ra.md i genera 10 exercicis progressius per alumnat de CFGS DAW.
+Llegeix @ra.md i @tema.md.
+
+Genera un resum teòric sobre estructures de selecció en Java per alumnat de CFGS DAM/DAW.
+
+Inclou:
+- explicació clara dels conceptes principals,
+- exemples de codi senzills,
+- errors habituals,
+- bones pràctiques,
+- una petita comparació entre if/else i switch.
+
+Presenta el resultat en format markdown.
+No generis exercicis encara.
+```
+
+Després es pot demanar:
+
+```text
+Guarda el resultat a teoria.md
+```
+
+Punt didàctic:
+
+El RA dona el marc curricular, però `tema.md` aporta el context concret que permet generar material docent més útil.
+
+---
+
+## Bloc 6. Generar exercicis a partir de la teoria (20 min)
+
+Nova petició:
+
+```text
+Llegeix @ra.md, @tema.md i @teoria.md.
+
+Genera 10 exercicis progressius sobre estructures de selecció en Java per alumnat de CFGS DAM/DAW.
 
 Classifica'ls en:
 - Inicial
 - Intermedi
 - Avançat
 
+Els exercicis han d'estar alineats amb la teoria generada.
 No incloguis la solució.
 Presenta el resultat en format markdown.
 ```
@@ -192,71 +254,50 @@ Després es pot demanar:
 Guarda el resultat a exercicis.md
 ```
 
-Punt didàctic:
-
-Amb un únic document ja podem obtenir una primera proposta útil, però encara poc contextualitzada.
-
----
-
-## Bloc 6. Refinament amb més context (20 min)
-
-Crear un segon document:
-
-```text
-criteris_avaluacio.md
-```
-
-Exemple de contingut:
-
-```text
-El material ha de tenir progressió de dificultat, context professional bàsic, enunciats clars i activitats resolubles en dues hores de classe.
-```
-
-Nova petició:
-
-```text
-Utilitza @ra.md i @criteris_avaluacio.md per generar una pràctica de 2 hores.
-
-Inclou:
-- objectiu,
-- enunciat,
-- tasques,
-- criteris de correcció.
-```
-
 Missatge clau:
 
-Com més context real aportem, més útil i ajustat és el resultat.
+Ara els exercicis no surten només d'un RA genèric, sinó d'una seqüència didàctica concreta: RA, tema i teoria.
 
 ---
 
-## Bloc 7. Activitat final guiada (25 min)
+## Bloc 7. Generar un examen a partir de materials previs (25 min)
 
 Preparar aquesta estructura:
 
 ```text
-materials/
+demo-docencia/
 ├── ra.md
-├── criteris_avaluacio.md
-└── examen_anterior.md
+├── tema.md
+├── teoria.md
+├── exercicis.md
+└── materials/
+    └── examen_anterior.md
 ```
 
 Prompt final:
 
 ```text
-Genera un nou examen inspirat en @materials/examen_anterior.md.
+Llegeix @ra.md, @tema.md, @teoria.md, @exercicis.md i @materials/examen_anterior.md.
 
-Mantén el nivell, però assegura que queda alineat amb @materials/ra.md i amb els criteris definits a @materials/criteris_avaluacio.md.
+Genera un nou examen sobre estructures de selecció en Java.
 
-No copiïs literalment l'examen anterior.
+Condicions:
+- ha d'estar alineat amb el RA,
+- ha de seguir el nivell i l'estil de l'examen anterior,
+- ha de cobrir els continguts de teoria.md,
+- ha de tenir una dificultat progressiva,
+- no ha de copiar literalment preguntes de l'examen anterior,
+- no incloguis les solucions.
+
+Presenta el resultat en format markdown.
 ```
 
 Variants per a proves en viu:
 
 * demanar una versió més curta,
 * demanar una versió amb rúbrica,
-* demanar una versió sense solucions,
-* demanar adaptació per recuperació.
+* demanar una versió de recuperació,
+* demanar una revisió de cobertura respecte a `@ra.md` i `@tema.md`.
 
 ---
 
@@ -290,10 +331,10 @@ Per obtenir millors resultats, convé indicar:
 Exemple:
 
 ```text
-Utilitza @ra.md i @criteris_avaluacio.md.
+Utilitza @ra.md, @tema.md i @teoria.md.
 
-Genera una activitat de 90 minuts per alumnat de CFGS DAW.
-Vull un format clar, amb objectiu, enunciat i criteris de correcció.
+Genera 5 exercicis d'aplicació sobre estructures de selecció en Java per alumnat de CFGS DAM/DAW.
+Vull un format clar, amb enunciat progressiu i sense solucions.
 No incloguis la solució.
 ```
 
@@ -337,14 +378,6 @@ GitHub:
 
 https://github.com/anomalyco/opencode
 
-OpenRouter:
-
-https://openrouter.ai
-
-Models OpenRouter:
-
-https://openrouter.ai/models
-
 ---
 
 
@@ -356,3 +389,51 @@ https://openrouter.ai/models
 * Revisió de repositoris Git.
 * Generació de feedback amb rúbriques.
 * Automatització de processos docents.
+
+---
+
+## Ampliació opcional: OpenRouter
+
+OpenRouter es pot presentar com una aplicació posterior a la sessió principal, perquè requereix registre i la configuració del compte pot implicar comprovacions de crèdits.
+
+### Quan pot interessar
+
+* quan es vol provar diferents models des d'un únic punt,
+* quan es vol comparar respostes entre models,
+* quan el docent ja té un compte operatiu.
+
+### Flux bàsic
+
+1. Crear compte a:
+
+https://openrouter.ai
+
+2. Generar una API key.
+
+3. Entrar a OpenCode i executar:
+
+```text
+/connect
+```
+
+4. Seleccionar `OpenRouter` i enganxar la clau.
+
+5. Consultar els models disponibles amb:
+
+```text
+/models
+```
+
+### Nota important
+
+Encara que alguns models apareguin com a gratuïts, OpenRouter continua requerint que el compte i la clau estiguin correctament configurats.
+
+### Recursos addicionals
+
+OpenRouter:
+
+https://openrouter.ai
+
+Models OpenRouter:
+
+https://openrouter.ai/models
