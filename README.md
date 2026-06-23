@@ -20,7 +20,7 @@ Abans del workshop convé tenir preparat:
 ## Clonar el repositori
 
 ```bash
-git clone <URL-del-repositori>
+git clone https://github.com/jselga/opencode-docencia
 cd opencode-docencia
 ```
 
