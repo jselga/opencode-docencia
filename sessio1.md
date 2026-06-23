@@ -182,14 +182,14 @@ opencode
 Inicialitzar el projecte:
 
 ```text
-/init
+/new
 ```
 
 Això ajuda OpenCode a entendre millor l'estructura i el context del projecte.
 
 ### Com moure's dins OpenCode
 
-* `@ra.md` per referenciar un fitxer.
+* `@RAs.md` per referenciar un fitxer.
 * `@tema.md` per aportar context específic.
 * `/models` per canviar de model.
 * `/undo` per desfer l'últim canvi.
@@ -198,11 +198,11 @@ Això ajuda OpenCode a entendre millor l'estructura i el context del projecte.
 ---
 
 ## Bloc 5. Generar material de teoria (20 min)
-
+Mode: Plan
 Prompt inicial:
 
 ```text
-Llegeix @ra.md i @tema.md.
+Llegeix @RAs.md i @tema.md.
 
 Genera un resum teòric sobre estructures de selecció en Java per alumnat de CFGS DAM/DAW.
 
@@ -218,8 +218,9 @@ No generis exercicis encara.
 ```
 
 Després es pot demanar:
-
+Mode: Build
 ```text
+Vull que possis fragments de codi breus però que exemplifiquin la teoria.    
 Guarda el resultat a teoria.md
 ```
 
