@@ -291,7 +291,7 @@ demo-docencia/
 Prompt final:
 
 ```text
-Llegeix @ra.md, @tema.md, @teoria.md, @exercicis.md i @materials/examen_anterior.md.
+Llegeix @RAs.md, @tema.md, @teoria.md, @exercicis.md i @materials/examen_anterior.md.
 
 Genera un nou examen sobre estructures de selecció en Java.
 
