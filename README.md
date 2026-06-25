@@ -7,6 +7,7 @@ L'objectiu del repositori és recollir materials, exemples i sessions de treball
 ## Continguts
 
 * [Sessió 1](./sessio1.md)
+* [Sessió 2](./sessio2.md)
 
 ## Preparació tècnica
 
