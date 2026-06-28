@@ -55,6 +55,12 @@ Nota important:
 
 Els passos previs de descàrrega, descompressió i anonimització es donen per preparats abans de la sessió. No són l'objectiu central del taller, tot i que es poden compartir com a material complementari.
 
+Material complementari:
+
+* Pla d'implementació del script d'anonimització: `@pla-implementacio-anonimitzacio.md`
+* Script d'exemple en python:
+  `@anoanonimitza_lliuraments.py`
+
 Nota de privacitat:
 
 Sempre que es treballi amb lliuraments reals, convé anonimitzar noms, identificadors i qualsevol dada personal abans d'incorporar-los al projecte.
