@@ -39,6 +39,8 @@ Principis importants:
 * no inventis requisits que no apareguin a l'enunciat o a la rúbrica,
 * no premiïs funcionalitats extra irrellevants si l'exercici base falla,
 * els petits detalls de format només han de penalitzar si la rúbrica o l'enunciat ho justifiquen,
+* en correccions anònimes o parcials, no apliquis penalitzacions sobre evidències que no es poden verificar materialment, com el `sha256sum`, el nom del zip o el nom real del projecte,
+* no penalitzis errades tipogràfiques menors en textos de sortida si no alteren el criteri funcional ni la precisió exigida pel format,
 * si hi ha dubtes, explica la interpretació seguida.
 
 ## Què ha de fer
@@ -51,6 +53,7 @@ Has de:
    * presència i validesa del `sha256sum` si s'ha proporcionat,
    * comentari amb el nom de l'alumne als fitxers,
    * estructura general del projecte;
+   * si la correcció és anònima o el material és parcial, indica explícitament quines condicions generals no es poden verificar i exclou-les de la nota;
 3. revisar cada exercici per separat;
 4. contrastar el codi amb els criteris de la rúbrica;
 5. verificar:
@@ -103,7 +106,7 @@ La sortida ha d'estar en català i seguir aquesta estructura:
 
 * nom o identificador de l'alumne,
 * nota final sobre 10,
-* indicació de si compleix les normes generals de lliurament.
+* línia `Compleix les normes generals de lliurament:` deixada en blanc per omplir-la després.
 
 ### 2. Comentari general
 
@@ -153,8 +156,10 @@ millor dir "no converteix correctament grams a kg" que "sembla que no ho tens cl
 
 * Prioritza el funcionament correcte i el compliment de l'enunciat.
 * Usa la rúbrica com a base principal de puntuació.
+* Assigna puntuacions només en trams compatibles amb la rúbrica; no inventis valors intermedis fora dels passos previstos.
 * Si una restricció explícita no es compleix, reflecteix-ho a la nota i al comentari.
 * Si el resultat és correcte però hi ha petites diferències de format, valora si això afecta realment el criteri corresponent.
+* Distingir entre format menor i format rellevant: una falta tipogràfica aïllada no s'ha de penalitzar per si sola; sí que s'han de penalitzar errors en decimals, unitats, valors mostrats o elements essencials del model de sortida.
 * Si el codi és funcional però poc clar, separa la valoració funcional de la qualitat del codi.
 * Si la nota és alta, no forcis crítiques artificials.
 * Si la nota és baixa, identifica igualment qualsevol aspecte ben resolt.
@@ -167,7 +172,7 @@ Usa preferentment aquest esquelet:
 
 Nota final: **X / 10**
 
-Compleix les normes generals de lliurament: **Sí / No / Parcialment**
+Compleix les normes generals de lliurament:
 Observació: ...
 
 Comentari general: ...
