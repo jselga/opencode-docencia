@@ -59,7 +59,7 @@ Material complementari:
 
 * Pla d'implementació del script d'anonimització: `@pla-implementacio-anonimitzacio.md`
 * Script d'exemple en python:
-  `@anoanonimitza_lliuraments.py`
+  `@anonimitza_lliuraments.py`
 
 Nota de privacitat:
 
@@ -269,7 +269,7 @@ i els lliuraments següents:
 - @lliuraments/alumne-02
 - @lliuraments/alumne-03
 
-Assumeix que aquests tres casos representen:
+Fes servir aquests tres casos com a exemples de:
 - un alumne de nota alta,
 - un alumne de nivell mitjà,
 - un alumne suspès.
@@ -319,13 +319,10 @@ Objectiu final:
 Prompt tipus:
 
 ```text
-Llegeix @examen.md, @rubrica-examen.md, @feedback-plantilla.md i @AGENTS.md.
+Fes una correcció en bloc de tots els lliuraments dins de @lliuraments.
 
-Per a cada carpeta dins de @lliuraments:
-- avalua el lliurament,
-- genera un fitxer feedback.md,
-- mantén el mateix format i el mateix to,
-- justifica la nota orientativa segons la rúbrica.
+Per a cada alumne, genera un fitxer `feedback.md` coherent amb `AGENTS.md`,
+mantenint el mateix to, estructura i criteri d'avaluació.
 ```
 
 Missatge didàctic:
