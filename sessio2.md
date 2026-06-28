@@ -75,8 +75,8 @@ Per obtenir correccions consistents, cal aportar context docent suficient:
 
 * `@examen.md` o `@enunciat.md`
 * `@rubrica-examen.md`
-* un lliurament de referència de nota alta
 * una plantilla o estil de `feedback.md`
+* diversos lliuraments representatius
 
 Missatge clau:
 
@@ -88,14 +88,11 @@ Exemple de carpeta de treball:
 demo-correccio/
 ├── examen.md
 ├── rubrica-examen.md
-├── solucio-examen/
-│   ├── Ex1Sol.java
-│   └── Ex2Sol.java
+├── feedback-plantilla.md
 ├── lliuraments/
 │   └── alumne-01/
 │       ├── Ex1.java
-│       ├── Ex2.java
-│       └── feedback.md
+│       └── Ex2.java
 └── AGENTS.md
 ```
 
@@ -217,7 +214,8 @@ Quan corregeixis lliuraments:
 Prompt de treball per construir-lo:
 
 ```text
-Llegeix @examen.md, @rubrica-examen.md, @solucio-examen/Ex1Sol.java, @solucio-examen/Ex2Sol.java i @lliuraments/alumne-01/feedback.md.
+Llegeix @examen.md, @rubrica-examen.md, @feedback-plantilla.md i els lliuraments
+@lliuraments/alumne-01, @lliuraments/alumne-02 i @lliuraments/alumne-03.
 
 Proposa un fitxer AGENTS.md per corregir lliuraments de programació de CFGS DAM/DAW.
 
@@ -227,7 +225,9 @@ Ha d'incloure:
 - criteris de qualitat,
 - format de sortida,
 - què ha de fer,
-- què no ha de fer.
+- què no ha de fer,
+- com justificar la nota orientativa,
+- com adaptar el feedback segons el nivell del lliurament.
 ```
 
 Després es pot demanar:
@@ -242,7 +242,7 @@ Missatge clau:
 
 ---
 
-### Bloc 7. Ajust amb casos patró (20 min)
+### Bloc 7. Ajust amb casos patró amb AGENTS.md (20 min)
 
 Abans de corregir un grup sencer, convé provar el sistema amb casos representatius.
 
@@ -257,21 +257,29 @@ Objectiu:
 * revisar si el to és l'adequat,
 * comprovar si la nota orientativa és coherent,
 * veure si el feedback realment ajuda a millorar,
-* ajustar `AGENTS.md` abans d'escalar.
+* ajustar `AGENTS.md` abans d'escalar,
+* validar que el comportament canvia correctament entre un cas fort, un cas mitjà i un cas fluix.
 
 Prompt tipus:
 
 ```text
-Llegeix @examen.md, @rubrica-examen.md, @AGENTS.md i @lliuraments/alumne-02.
+Llegeix @examen.md, @rubrica-examen.md, @feedback-plantilla.md, @AGENTS.md
+i els lliuraments següents:
+- @lliuraments/alumne-01
+- @lliuraments/alumne-02
+- @lliuraments/alumne-03
 
-Avalua el lliurament i genera un feedback en format markdown.
+Assumeix que aquests tres casos representen:
+- un alumne de nota alta,
+- un alumne de nivell mitjà,
+- un alumne suspès.
 
-Inclou:
-- nota orientativa,
-- punts forts,
-- errors detectats,
-- millores recomanades,
-- feedback final per a l'alumne.
+Genera un feedback en format markdown per a cada cas seguint AGENTS.md.
+
+Després, indica:
+- si el to és coherent entre casos,
+- si la nota orientativa està ben ajustada,
+- quins canvis proposes a AGENTS.md per millorar la consistència.
 ```
 
 Missatge clau:
@@ -282,7 +290,7 @@ Primer s'ajusta el sistema amb pocs casos. Després s'escala.
 
 ### Bloc 8. Correcció en bloc (20 min)
 
-Quan el context i el comportament ja són prou estables, es pot passar a la correcció del conjunt complet de lliuraments.
+Un cop revisat `AGENTS.md` amb casos patró, ja es pot passar a la correcció del conjunt complet de lliuraments.
 
 Estructura esperada:
 
@@ -307,6 +315,18 @@ Objectiu final:
 * generar un `feedback.md` per a cada alumne,
 * mantenir un format consistent,
 * reduir temps de correcció sense perdre criteri docent.
+
+Prompt tipus:
+
+```text
+Llegeix @examen.md, @rubrica-examen.md, @feedback-plantilla.md i @AGENTS.md.
+
+Per a cada carpeta dins de @lliuraments:
+- avalua el lliurament,
+- genera un fitxer feedback.md,
+- mantén el mateix format i el mateix to,
+- justifica la nota orientativa segons la rúbrica.
+```
 
 Missatge didàctic:
 
@@ -337,9 +357,8 @@ Límits:
 
 * `examen.md`
 * `rubrica-examen.md`
-* `solucio-examen/`
+* `feedback-plantilla.md`
 * `lliuraments/alumne-xx/`
-* `feedback.md` d'exemple
 * `AGENTS.md`
 
 ---
