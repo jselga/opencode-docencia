@@ -240,6 +240,17 @@ Missatge clau:
 
 `AGENTS.md` és la peça que converteix un conjunt de proves puntuals en un procés reusable.
 
+Nota d'ampliació:
+
+En aquest workshop ens centrem en `AGENTS.md` perquè és la manera més directa d'estabilitzar el comportament de correcció dins del projecte.
+
+Si dona temps, o com a treball autònom posterior, es pot ampliar el flux amb:
+
+* `skills`, per encapsular instruccions o capacitats especialitzades reutilitzables,
+* `subagents`, per delegar tasques concretes a agents més enfocats.
+
+La idea és no començar per aquí, sinó arribar-hi un cop el procés base de correcció ja funciona bé.
+
 ---
 
 ### Bloc 7. Ajust amb casos patró amb AGENTS.md (20 min)
@@ -338,6 +349,7 @@ Bones pràctiques:
 * anonimitzar sempre els materials reals,
 * revisar primer casos patró,
 * fixar el context amb `AGENTS.md`,
+* començar amb `AGENTS.md` abans d'introduir `skills` o `subagents`,
 * supervisar una mostra de feedback abans d'escalar,
 * mantenir el docent com a responsable final de la correcció.
 

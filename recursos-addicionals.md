@@ -21,6 +21,49 @@ Recopilatori de recursos consultats per preparar el workshop i materials de supo
 * [Getting started](https://opencode.ai/docs/getting-started)
 * [GitHub d'OpenCode](https://github.com/anomalyco/opencode)
 
+## Ampliació: AGENTS.md, skills i subagents
+
+### AGENTS.md
+
+`AGENTS.md` serveix per definir el comportament general d'OpenCode dins d'un projecte:
+
+* rol,
+* to,
+* criteris,
+* format de resposta,
+* límits.
+
+És la peça més simple i útil per estabilitzar un flux docent.
+
+### Skills
+
+Les `skills` permeten encapsular instruccions o capacitats especialitzades reutilitzables.
+
+Poden ser útils quan volem:
+
+* repetir un patró de treball,
+* separar tasques per tipus,
+* oferir suport més guiat en contextos concrets.
+
+### Subagents
+
+Els `subagents` permeten delegar tasques més concretes a agents enfocats.
+
+Per exemple:
+
+* revisar errors de compilació,
+* resumir patrons d'error del grup,
+* analitzar la qualitat del feedback generat.
+
+### Idea clau
+
+Per a docència, el més recomanable és:
+
+1. començar amb un bon `AGENTS.md`,
+2. provar el flux amb casos patró,
+3. escalar la correcció,
+4. i només després explorar `skills` o `subagents` si realment aporten valor.
+
 ## Altres recursos
 
 * [OpenRouter](https://openrouter.ai) — proveïdor de models opcionals
